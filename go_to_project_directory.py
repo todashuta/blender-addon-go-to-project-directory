@@ -23,9 +23,9 @@ import bpy
 bl_info = {
     "name": "Go to Project Directory (//)",
     "author": "todashuta",
-    "version": (1, 1, 0),
+    "version": (1, 2, 0),
     "blender": (2, 80, 0),
-    "location": "File Browser",
+    "location": "File Browser > HOME Key",
     "description": "",
     "warning": "",
     "wiki_url": "",
@@ -87,13 +87,13 @@ def unregister_shortcut():
 def register():
     for c in classes:
         bpy.utils.register_class(c)
-    bpy.types.FILEBROWSER_PT_directory_path.append(button_func)
+    #bpy.types.FILEBROWSER_PT_directory_path.append(button_func)
     register_shortcut()
 
 
 def unregister():
     unregister_shortcut()
-    bpy.types.FILEBROWSER_PT_directory_path.remove(button_func)
+    #bpy.types.FILEBROWSER_PT_directory_path.remove(button_func)
     for c in reversed(classes):
         bpy.utils.unregister_class(c)
 
